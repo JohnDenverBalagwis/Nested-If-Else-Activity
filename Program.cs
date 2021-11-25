@@ -1,72 +1,73 @@
-﻿using System;
+using System;
 
-namespace NestedIfElse
+namespace NestedIfElseFindTheGreaterNumber
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Demonstration of NESTED IF Else Construct");
-
-            comparison();
+            Comparison();
         }
 
-        static void comparison()
+        private static void Comparison()
         {
-            Console.WriteLine("Enter the first number: ");
+            Console.Clear();
+            Console.WriteLine("\n\t=========================================");
+            Console.WriteLine("\tDEMONSTRATION OF NESTED IF ELSE CONSTRUCT");
+            Console.WriteLine("\t=========================================\n");
+            Console.Write("\tENTER THE FIRST NUMBER : ");
             int first = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the second number: ");
+            Console.Write("\tENTER THE SECOND NUMBER : ");
             int second = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the third number: ");
+            Console.Write("\tENTER THE THIRD NUMBER : ");
             int third = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("The first number is : " + first);
-            Console.WriteLine("The second number is : " + second);
-            Console.WriteLine("The third number is : " + third);
+            Console.WriteLine("\n\t=========================================\n");
+            Console.WriteLine("\tTHE FIRST NUMBER IS : " + first);
+            Console.WriteLine("\tTHE SECOND NUMBER IS : " + second);
+            Console.WriteLine("\tTHE THIRD NUMBER IS : " + third);
+            Console.WriteLine("\n\t=========================================");
 
-            if (first > second)
+            if (first == second && second == third && third == first)
             {
-                if (first > third)
-                {
-                    Console
-                        .WriteLine("The highest number is the first number" +
-                        first);
-                }
-                else
-                {
-                    Console
-                        .WriteLine("The highest number is the third number : " +
-                        third);
-                }
+                Console.WriteLine("\n\tTHE THREE NUMBERS ARE EQUAL");
             }
             else
             {
-                if (second > third)
+                if (first > second && first > third)
                 {
-                    Console
-                        .WriteLine("The second number is the highest number: " +
-                        second);
+                    Console.WriteLine("\n\tTHE FIRST IS THE HIGHEST NUMBER");
+                }
+                else if (second > first && second > third)
+                {
+                    Console.WriteLine("\n\tTHE SECOND IS THE HIGHEST NUMBER");
+                }
+                else if (third > first && third > second)
+                {
+                    Console.WriteLine("\n\tTHIRD IS THE HIGHEST NUMBER");
                 }
                 else
                 {
-                    Console
-                        .WriteLine("The third number is the highest number: " +
-                        third);
+                    Console.WriteLine("\n\tTHE TWO NUMBERS ARE EQUAL");
                 }
             }
 
-            Console.WriteLine("WANT TO ENTER AGAIN [Y/N]? ");
-            String s = Console.ReadLine();
+            Console.Write("\n\tWANT TO ENTER AGAIN [Y/N]? ");
+            string option = Console.ReadLine();
 
-            if ((s == "y") || (s == "Y"))
+            if (option == "y" || option == "Y")
             {
-                comparison();
+                Comparison();
             }
             else
             {
-                Console.WriteLine("Thank you for using this program, bye...");
+                Console.Clear();
+                Console.WriteLine("\n\t=========================================");
+                Console.WriteLine("\tTHANK YOU FOR USING THIS PROGRAM, BYE...");
+                Console.WriteLine("\t=========================================");
+                Console.ReadKey();
             }
         }
     }
